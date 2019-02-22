@@ -14,3 +14,7 @@
 Route::get('/manage', function () {
     return view('manage');
 });
+
+Route::get('tt', function (\Illuminate\Http\Request $request){
+    dd($request->header('authorization'));
+});

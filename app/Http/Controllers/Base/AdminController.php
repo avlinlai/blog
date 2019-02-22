@@ -19,6 +19,7 @@ class AdminController extends Controller
      */
     protected $model = \Illuminate\Database\Eloquent\Model::class;
 
+
     /**
      * 获取列表数据
      *

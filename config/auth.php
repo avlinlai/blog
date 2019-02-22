@@ -67,15 +67,9 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => \App\Models\user\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
@@ -98,5 +92,24 @@ return [
             'expire' => 60,
         ],
     ],
+    //第三方登录所需密匙等信息
+    'oauth' => [
+        'wx' => [
+            'appId' => '',
+            'appSecret' => '',
+        ],
+        'wb' => [
+            'appKey' => '',
+            'appSecret' => '',
+            'redirect_uri' => '',
+        ],
+        'qq' => [
+            'appId' => ''
+        ]
+    ],
+    //token 创建token后多久过期时间,按天算
+    'TokenExpireTime' => 7,
+    //token存储驱动
+    'tokenDrive' => 'mysql',
 
 ];

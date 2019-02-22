@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
+
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     /**
      * 接口返回状态码，接口中统一使用此处状态码

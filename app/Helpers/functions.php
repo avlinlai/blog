@@ -7,7 +7,6 @@ function cmf_url_decrypt($str){
     $str = base64_decode($str);
     return substr($str,7,-3);
 }
-
 function cmf_url_encrypt_array($array,$field='id'){
     $_array = [];
     foreach ($array as $val){
@@ -21,8 +20,14 @@ function cmf_url_encrypt_item($array,$field='id'){
     return $array;
 }
 
+
+/**
+ * 是否是超级用户
+ *
+ * @return bool
+ */
 function isSuperManager() {
-    $user = \App\Models\User::query()
+    $user = \App\Models\user\User::query()
         ->with(['Roles'])
         ->where('id', \Illuminate\Support\Facades\Auth::id())
         ->first()
@@ -32,4 +37,15 @@ function isSuperManager() {
         return true;
     }
     return false;
+}
+
+/**
+ * 自己的auth操作
+ *
+ * @param $type
+ *
+ * @return \App\JM\Auth
+ */
+function auth($type) {
+    return (new \App\JM\Auth($type))->back();
 }

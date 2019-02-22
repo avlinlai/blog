@@ -3,41 +3,24 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\user\User;
+use App\Services\Login\Login;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(Request $request)
+    /**
+     * 用户登录
+     *
+     * @param \Illuminate\Http\Request  $request
+     * @param \App\Services\Login\Login $login
+     *
+     * @return array|bool|\Illuminate\Http\JsonResponse
+     */
+    public function login(Request $request, Login $login)
     {
-        $data = $request->validate(
-            [
-                'mobile' => 'required|size:11',
-                'password' => 'required|string|min:6',
-            ]
-        );
-        $status = User::where('mobile', $data['mobile'])->first()->state;
-        //判断一下当前用户是否被禁止登陆
-        if ($status != 0) {
-            if (Auth::attempt(['mobile' => $data['mobile'], 'password' => $data['password']])) {
-                $token = Auth::user()->createToken(config('auth.token_name'))->accessToken;
-                return response()->json([
-                    'msg' => '登陆成功',
-                    'code' => $this->StatusCode['success'],
-                    'token' => $token,
-                ]);
-            }
-        }
-        return response()->json([
-            'msg' => '登陆失败',
-            'code' => $this->StatusCode['error']
-        ]);
+       $type = $request->get('type', 'normal');
+       return $login->handleLogin($type);
     }
-
-    public function logout(Request $request)
-    {
-
-    }
-
 }
