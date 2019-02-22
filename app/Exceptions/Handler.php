@@ -46,6 +46,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        //表单验证失败错误异常
+        if ($exception instanceof FromVerif) {
+            //
+            return response($exception->getMessage(),$exception->getCode());
+        }
         return parent::render($request, $exception);
     }
 }
