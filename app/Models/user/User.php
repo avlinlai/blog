@@ -3,10 +3,12 @@
 namespace App\Models\user;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-
+    use HasApiTokens, Notifiable;
     /**
      * 批量复制白名单
      * @var array
@@ -22,7 +24,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token','deleted_at'
     ];
-
 
     /**
      * 属性类型转换

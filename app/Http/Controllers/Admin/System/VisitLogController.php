@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\System;
+namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Base\AdminController;
 use App\Models\system\VisitLog;

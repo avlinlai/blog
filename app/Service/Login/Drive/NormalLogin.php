@@ -8,12 +8,8 @@
 
 namespace App\Services\Login\Drive;
 
-
-use App\Models\User\User;
 use App\Services\Login\contract\AbstractLogin;
 use App\Services\SMS\SmsService;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class NormalLogin extends AbstractLogin
 {
@@ -30,7 +26,7 @@ class NormalLogin extends AbstractLogin
         $code = request()->get('code');
         //判断输入的验证码是否一致
         $isAdopt = SmsService::check($phone, $code);
-        if ($code != '123456') {
+        if ($code != '123456') {  //临时验证码,方便测试
             if ($isAdopt !== true) {
                 return response()->json([
                     'code' => -2,
@@ -38,23 +34,26 @@ class NormalLogin extends AbstractLogin
                 ]);
             }
         }
-        if ($this->phoneIsRegister($phone)) {
-            $this->register(request()->all()); //注册用户
-        }
-        if (Auth::attempt(['phone' => $phone, 'password' => 123], true)) {
+        $user = $this->userModel::query()
+            ->where('phone', $phone)
+            ->first();
+        if (is_null($user)) {
+            return response()->json([
+                'code' => -1,
+                'msg' => '登录失败',
+            ]);
+        } else {
             $openId = \request()->get('openid', null);
             $bindType = \request()->get('type', null);
             if (!empty($openId)) { //绑定openId
-                User::query()->find(Auth::id())
+                $this->userModel::query()->where('phone', $phone)
                     ->update([
                         $bindType . '_openid' => $openId
                     ]);
             }
+            $this->UserModelLogin($user);
             return $this->responseSuccessMsg('normal');
         }
-        return response()->json([
-            'code' => -1,
-            'msg' => '登录失败',
-        ]);
+
     }
 }

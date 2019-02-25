@@ -3,7 +3,7 @@ import axios from "@/libs/axios";
 
 export const login = (data) => {
     return axios.request({
-        url: 'login',
+        url: 'Admin/login?type=normal',
         data,
         method: 'post'
     })

@@ -1,32 +1,62 @@
 <template>
     <div class="login">
-        <el-form ref="form" :model="form" label-width="80px">
-            <el-form-item label="手机号">
-                <el-input v-model="form.mobile "></el-input>
-            </el-form-item>
-            <el-form-item label="密码">
-                <el-input type="password" v-model="form.password"></el-input>
-            </el-form-item>
-            <!--<el-form-item label="">-->
-                <!--<el-checkbox-group v-model="form.type">-->
-                    <!--<el-checkbox label="记住密码" name="type"></el-checkbox>-->
-                <!--</el-checkbox-group>-->
-                <!--<router-link to="/for">忘记密码？</router-link>-->
-            <!--</el-form-item>-->
-            <el-form-item>
-                <el-button type="primary" @click="onSubmit">立即登录</el-button>
-                <!--<el-button @click="handleRegister">注册账户</el-button>-->
-            </el-form-item>
-        </el-form>
+        <div class="loginDlog">
+            <div class="body">
+                <div class="content-left">
+                    <h1 class="logo">
+                        <a></a>
+                    </h1>
+                    <el-form ref="form" :model="form" label-width="80px">
+                        <el-form-item label="手机号">
+                            <el-input style="width: 250px" v-model="form.phone "></el-input>
+                        </el-form-item>
+                        <el-form-item label="密  码">
+                            <el-input style="width: 250px" type="password" v-model="form.password"></el-input>
+                        </el-form-item>
+                        <el-form-item style="margin-bottom:0!important;">
+                            <a href="" class="forget-password">忘记密码?</a>
+                            <el-button style="padding: 10px 40px;" type="success" size="small" @click="onSubmit">登录
+                            </el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <div class="content-right">
+                    <h3 class="oauth-text">第三方账号登录</h3>
+                    <ul class="oauth">
+                        <li>
+                            <el-button class="oauth-bt" type="danger" @click="onSubmit">
+                                <i class="iconfont">&#xe61d;</i>
+                                微博登录
+                            </el-button>
+                        </li>
+                        <li>
+                            <el-button class="oauth-bt" type="primary" @click="onSubmit">
+                                <i class="iconfont">&#xe637;</i>
+                                QQ登录</el-button>
+                        </li>
+                        <li>
+                            <el-button class="oauth-bt" type="success" @click="onSubmit">
+                                <i class="iconfont">&#xe61e;</i>
+                                微信登录</el-button>
+                        </li>
+                    </ul>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="loginDlog-footer">
+                驱动IT管理系统
+            </div>
+        </div>
     </div>
 </template>
 <script>
-    import { mapActions } from 'vuex'
+    import {mapActions} from 'vuex'
+
     export default {
         data() {
             return {
                 form: {
-                    mobile : '',
+                    phone: '',
                     password: '',
                 }
             }
@@ -37,28 +67,103 @@
             ]),
             onSubmit() {
                 this.handleLogin(this.form).then(res => {
-                    if (res.code == 0){
+                    if (res.code == 0) {
                         this.$message.success('登陆成功');
-                        //window.location.reload('http://www.jzrpsp.com/admin');
                         this.$router.push('/')
-                    } else{
+                    } else {
                         this.$message.error('登陆失败');
                     }
                 })
             },
-            handleRegister(){
-                this.$router.push('/register')
-            }
         }
     }
 </script>
-<style>
-    .login{
-        width: 450px;
-        height: 300px;
+
+<style scoped>
+    .forget-password {
+        margin-right: 45px;
+        text-decoration: none;
+        color: #666666;
+    }
+    .content-left {
+        float: left;
+        width: 300px;
+        margin-right: 60px;
+    }
+    .body {
+        padding: 40px 60px;
+        overflow: hidden;
+    }
+    .content-right {
+        float: left;
+        padding: 60px 0 60px 60px;
+        border-left: 1px solid #e6e6e6;
+    }
+    .oauth-bt {
+        width: 170px;
+    }
+    @font-face {
+        font-family: 'iconfont';  /* project id 1059035 */
+        src: url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.eot');
+        src: url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.woff2') format('woff2'),
+        url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.woff') format('woff'),
+        url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.svg#iconfont') format('svg');
+    }
+    .iconfont {
+        font-family: "iconfont" !important;
+        font-size: 18px;
+        font-style: normal;
+        float: left;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .oauth {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .oauth li {
+        line-height: 55px;
+    }
+    .oauth-text {
+        margin-top: 0;
+        font-size: 100%;
+        font-weight: 500;
+        line-height: 1.7;
+        margin-bottom: 27px;
+        color: #666666;
+        text-align: center;
+    }
+    .login {
+        width: 100%;
+        height: 100%;
+        background-color: #487779;
+    }
+    .loginDlog {
+        background-color: white;
+        width: 715px;
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
+    }
+    .loginDlog-footer {
+        height: 70px;
+        line-height: 70px;
+        background-color: #f5f5f5;
+        padding: 0 60px;
+        color: #66b7ff;
+    }
+    .logo {
+        width: 240px;
+        height: 94px;
+        background: url(../src/img/logo.png) no-repeat;
+    }
+    .logo a {
+        display: block;
+        width: 151px;
+        height: 94px;
     }
 </style>

@@ -2,20 +2,22 @@
 
 namespace App\Services\Login\contract;
 
-use App\Models\MSG\MSG;
-use App\Models\QA\Tags;
-use App\Models\User\AppSetUp;
 use App\Models\User\User;
-use App\Models\User\UserFollowTags;
-use App\Models\User\UserInfo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redis;
 
 abstract class AbstractLogin
 {
+    /*
+     * 当前用户模型
+     */
+    protected  $userModel;
 
-
+    public function __construct()
+    {
+        $this->userModel = '\\'.config('auth.providers.users.model');
+    }
     /**
      * 接口返回状态码，接口中统一使用此处状态码
      *
@@ -125,7 +127,7 @@ abstract class AbstractLogin
      */
     public function phoneIsRegister($phone)
     {
-        $user = User::query()
+        $user = $this->userModel::query()
             ->where('phone', $phone)
             ->first();
         if (empty($user)) {
@@ -146,7 +148,7 @@ abstract class AbstractLogin
         $data = User::query()
             ->create([
                 'username' => $filedValue['username'] ?? "建言用户" . (mb_substr(md5(uniqid().uniqid()), 0, 5)),
-                'password' => Hash::make(123),
+                'password' => Hash::make(123456),
                 'phone' => $filedValue['phone'],
                 'sex' => $filedValue['sex'] ?? 1,
                 'type' => $filedValue['type'] ?? 1,
@@ -154,32 +156,6 @@ abstract class AbstractLogin
                 'option' => $filedValue['option'] ?? null,
                 'avatar' => $filedValue['avatar'] ?? 'https://qudongit.oss-cn-beijing.aliyuncs.com/QQ%E5%9B%BE%E7%89%8720181120143701.jpg',
             ]);
-        // app设置里面自动插入一条记录
-        AppSetUp::query()->create([
-            'user_id' => $data['id']
-        ]);
-        // 用户信息拓展里面插入一条记录
-        UserInfo::query()->create([
-            'user_id' => $data['id']
-        ]);
-        //用户的消息设置插入一条记录
-        MSG::query()->create([
-            'user_id' => $data['id']
-        ]);
-        if (isset($filedValue['tags'])) { //选择了标签
-            //用户id 数据关联 标签
-            $tag = array_map(function ($item) use ($data) {
-                $result = [];
-                $result['user_id'] = $data['id'];
-                $result['tag_id'] = $item;
-                //标签的总关注人数 total_follow 自增
-                Tags::query()
-                    ->where('id', $item)
-                    ->increment('total_follow');
-                return $result;
-            }, $filedValue['tags']);
-            UserFollowTags::query()->insert($tag);
-        }
         return true;
     }
 

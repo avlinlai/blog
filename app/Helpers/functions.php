@@ -38,14 +38,3 @@ function isSuperManager() {
     }
     return false;
 }
-
-/**
- * 自己的auth操作
- *
- * @param $type
- *
- * @return \App\JM\Auth
- */
-function auth($type) {
-    return (new \App\JM\Auth($type))->back();
-}

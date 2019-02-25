@@ -7,11 +7,11 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     routes,
     mode: 'hash'
-})
+});
 
-const HOME_PAGE_NAME = 'home'
-const LOGIN_PAGE_NAME = 'login'
-const REGISTER_PAGE_NAME = 'register'
+const HOME_PAGE_NAME = 'home';
+const LOGIN_PAGE_NAME = 'login';
+const REGISTER_PAGE_NAME = 'register';
 
 router.beforeEach((to, from, next) => {
     const is_login = getToken() ? getToken() != 'undefined':false;
@@ -47,10 +47,10 @@ router.beforeEach((to, from, next) => {
             })
         })
     }
-})
+});
 
 router.afterEach(to => {
 
-})
+});
 
 export default router

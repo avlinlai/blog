@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\System;
+namespace App\Http\Controllers\Admin\System;
 
 use App\Models\system\Config;
 //use App\Services\SMS\SmsService;

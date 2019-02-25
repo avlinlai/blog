@@ -19,6 +19,13 @@ class AdminController extends Controller
      */
     protected $model = \Illuminate\Database\Eloquent\Model::class;
 
+    public function __construct()
+    {
+        /**
+         * 修改auth操作表模型
+         */
+       \Illuminate\Support\Facades\Config::set('auth.providers.users.model',\App\Models\rbac\Admin::class);
+    }
 
     /**
      * 获取列表数据

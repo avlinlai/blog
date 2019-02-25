@@ -1,20 +1,24 @@
 webpackJsonp([15],{
 
-/***/ 214:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(238)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(434)
+}
+var normalizeComponent = __webpack_require__(226)
 /* script */
-var __vue_script__ = __webpack_require__(315)
+var __vue_script__ = __webpack_require__(424)
 /* template */
-var __vue_template__ = __webpack_require__(331)
+var __vue_template__ = __webpack_require__(436)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-64ad20fd"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -25,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/view/system/config/list.vue"
+Component.options.__file = "resources/js/view/login.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7ef86a87", Component.options)
+    hotAPI.createRecord("data-v-64ad20fd", Component.options)
   } else {
-    hotAPI.reload("data-v-7ef86a87", Component.options)
+    hotAPI.reload("data-v-64ad20fd", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 238:
+/***/ 226:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 239:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -177,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(240)
+var listToStyles = __webpack_require__(228)
 
 /*
 type StyleObject = {
@@ -387,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 240:
+/***/ 228:
 /***/ (function(module, exports) {
 
 /**
@@ -421,90 +425,52 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 271:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return menu_add; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return menu_edit; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return menu_detail; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return config_get; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return config_add; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return config_update; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return emailTest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return phoneTest; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__libs_axios__ = __webpack_require__(26);
-
-
-var menu_add = function menu_add(data) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/menu/add',
-        data: data,
-        method: 'post'
-    });
-};
-var menu_edit = function menu_edit(data) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/menu/edit',
-        data: data,
-        method: 'post'
-    });
-};
-var menu_detail = function menu_detail(id) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/menu/' + id,
-        method: 'get'
-    });
-};
-
-var config_get = function config_get(keyword) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/config?keyword=' + keyword,
-        method: 'get'
-    });
-};
-var config_add = function config_add(data) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/config',
-        data: data,
-        method: 'post'
-    });
-};
-var config_update = function config_update(id, data) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/config/' + id,
-        data: data,
-        method: 'put'
-    });
-};
-var emailTest = function emailTest(data) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/config/emailTest',
-        data: data,
-        method: 'post'
-    });
-};
-var phoneTest = function phoneTest(data) {
-    return __WEBPACK_IMPORTED_MODULE_0__libs_axios__["a" /* default */].request({
-        url: '/config/phoneTest',
-        data: data,
-        method: 'post'
-    });
-};
-
-/***/ }),
-
-/***/ 315:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wx__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__wx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__batchOrder__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__batchOrder___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__batchOrder__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notify__ = __webpack_require__(326);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__notify__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(82);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -519,1443 +485,245 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { wx: __WEBPACK_IMPORTED_MODULE_0__wx___default.a, batchOrder: __WEBPACK_IMPORTED_MODULE_1__batchOrder___default.a, notify: __WEBPACK_IMPORTED_MODULE_2__notify___default.a },
-    data: function data() {
-        return {
-            activeName: 'first'
-        };
-    },
-
-    methods: {}
-});
-
-/***/ }),
-
-/***/ 316:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(317)
-}
-var normalizeComponent = __webpack_require__(238)
-/* script */
-var __vue_script__ = __webpack_require__(319)
-/* template */
-var __vue_template__ = __webpack_require__(320)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-3df64f8a"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/view/system/config/wx.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3df64f8a", Component.options)
-  } else {
-    hotAPI.reload("data-v-3df64f8a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 317:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(318);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(239)("652796ac", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3df64f8a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./wx.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3df64f8a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./wx.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 318:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(79)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 319:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_system__ = __webpack_require__(271);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            wxForm: {
-                keyword: 'wx',
-                value: {
-                    appid: '',
-                    secret: ''
-                },
-                type: 'json',
-                desc: '微信配置',
-                pid: 0
-            },
-            status: 'add'
-        };
-    },
-    created: function created() {
-        var _this = this;
-
-        Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["b" /* config_get */])('wx').then(function (response) {
-            if (response.data.status != false) {
-                _this.wxForm.value = response.data.data;
-                _this.status = 'update';
-            } else {
-                _this.$message.info('没有配置过微信信息');
+            form: {
+                phone: '',
+                password: ''
             }
-        });
+        };
     },
 
-    methods: {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['handleLogin']), {
         onSubmit: function onSubmit() {
-            var _this2 = this;
+            var _this = this;
 
-            if (this.status == 'add') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["a" /* config_add */])(this.wxForm).then(function (response) {
-                    _this2.$message.success(response.data.message);
-                });
-            }
-            if (this.status == 'update') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["c" /* config_update */])(1, this.wxForm).then(function (response) {
-                    _this2.$message.success(response.data.message);
-                });
-            }
-        }
-    }
-});
-
-/***/ }),
-
-/***/ 320:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "30%" } },
-    [
-      _c(
-        "el-form",
-        {
-          ref: "form",
-          attrs: { model: _vm.wxForm, "label-width": "80px", size: "mini" }
-        },
-        [
-          _c(
-            "el-form-item",
-            { attrs: { label: "appId" } },
-            [
-              _c("el-input", {
-                attrs: { placeholder: "请输入appId" },
-                model: {
-                  value: _vm.wxForm.value.appid,
-                  callback: function($$v) {
-                    _vm.$set(_vm.wxForm.value, "appid", $$v)
-                  },
-                  expression: "wxForm.value.appid"
+            this.handleLogin(this.form).then(function (res) {
+                if (res.code == 0) {
+                    _this.$message.success('登陆成功');
+                    _this.$router.push('/');
+                } else {
+                    _this.$message.error('登陆失败');
                 }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "el-form-item",
-            { attrs: { label: "secret密匙" } },
-            [
-              _c("el-input", {
-                attrs: { placeholder: "请输入appId对应的密匙" },
-                model: {
-                  value: _vm.wxForm.value.secret,
-                  callback: function($$v) {
-                    _vm.$set(_vm.wxForm.value, "secret", $$v)
-                  },
-                  expression: "wxForm.value.secret"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "el-form-item",
-            { attrs: { size: "large" } },
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "primary" }, on: { click: _vm.onSubmit } },
-                [_vm._v("保存配置")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3df64f8a", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 321:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(322)
-}
-var normalizeComponent = __webpack_require__(238)
-/* script */
-var __vue_script__ = __webpack_require__(324)
-/* template */
-var __vue_template__ = __webpack_require__(325)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-f5e51b46"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/view/system/config/batchOrder.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f5e51b46", Component.options)
-  } else {
-    hotAPI.reload("data-v-f5e51b46", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 322:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(323);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(239)("6c2966b4", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f5e51b46\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./batchOrder.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f5e51b46\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./batchOrder.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 323:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(79)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 324:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_system__ = __webpack_require__(271);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            option: [{
-                label: '关闭',
-                value: '0'
-            }, {
-                label: '开启',
-                value: '1'
-            }],
-            batchForm: {
-                keyword: 'batchOrder',
-                value: {
-                    status: '0',
-                    number: '2'
-                },
-                type: 'json',
-                desc: '防刷订单配置',
-                pid: 0
-            },
-            status: 'add'
-        };
-    },
-    created: function created() {
-        var _this = this;
-
-        Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["b" /* config_get */])('batchOrder').then(function (response) {
-            if (response.data.status != false) {
-                _this.batchForm.value = response.data.data;
-                _this.status = 'update';
-            } else {
-                _this.$message.info('没有配置过防刷信息');
-            }
-        });
-    },
-
-    methods: {
-        onSubmit: function onSubmit() {
-            var _this2 = this;
-
-            if (this.status == 'add') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["a" /* config_add */])(this.batchForm).then(function (response) {
-                    _this2.$message.success(response.data.message);
-                });
-            }
-            if (this.status == 'update') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["c" /* config_update */])(1, this.batchForm).then(function (response) {
-                    _this2.$message.success(response.data.message);
-                });
-            }
-        }
-    }
-});
-
-/***/ }),
-
-/***/ 325:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { width: "30%" } },
-    [
-      _c(
-        "el-form",
-        {
-          ref: "form",
-          attrs: { model: _vm.batchForm, "label-width": "80px", size: "mini" }
-        },
-        [
-          _c(
-            "el-form-item",
-            { attrs: { label: "状态" } },
-            [
-              _c(
-                "el-select",
-                {
-                  attrs: { placeholder: "请选择" },
-                  model: {
-                    value: _vm.batchForm.value.status,
-                    callback: function($$v) {
-                      _vm.$set(_vm.batchForm.value, "status", $$v)
-                    },
-                    expression: "batchForm.value.status"
-                  }
-                },
-                _vm._l(_vm.option, function(item) {
-                  return _c("el-option", {
-                    key: item.value,
-                    attrs: { label: item.label, value: item.value }
-                  })
-                }),
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "el-form-item",
-            { attrs: { label: "限定数量" } },
-            [
-              _c("el-input", {
-                attrs: { placeholder: "请输入限定数量" },
-                model: {
-                  value: _vm.batchForm.value.number,
-                  callback: function($$v) {
-                    _vm.$set(_vm.batchForm.value, "number", $$v)
-                  },
-                  expression: "batchForm.value.number"
-                }
-              }),
-              _vm._v(" "),
-              _c("span", { staticStyle: { color: "red" } }, [
-                _vm._v("同一手机和IP一天可以下几次订单")
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "el-form-item",
-            { attrs: { size: "large" } },
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "primary" }, on: { click: _vm.onSubmit } },
-                [_vm._v("保存配置")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f5e51b46", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 326:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(327)
-}
-var normalizeComponent = __webpack_require__(238)
-/* script */
-var __vue_script__ = __webpack_require__(329)
-/* template */
-var __vue_template__ = __webpack_require__(330)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-f368991c"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/view/system/config/notify.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f368991c", Component.options)
-  } else {
-    hotAPI.reload("data-v-f368991c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 327:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(328);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(239)("811a67f6", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f368991c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./notify.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f368991c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./notify.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 328:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(79)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.longInput[data-v-f368991c] {\n    width: 400px;\n}\ntr[data-v-f368991c] {\n    line-height: 50px;\n}\n.email[data-v-f368991c] {\n    background-color: #ffffff;\n}\n.phone[data-v-f368991c] {\n    margin-top: 15px;\n    background-color: #ffffff;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 329:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_system__ = __webpack_require__(271);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    name: "notify",
-    data: function data() {
-        return {
-            option: [{
-                label: '关闭',
-                value: '0'
-            }, {
-                label: '开启',
-                value: '1'
-            }],
-            provider: [{
-                label: '短信宝',
-                value: 'smsbao'
-            }],
-            email: {
-                value: {
-                    status: '0',
-                    smtp_server: 'smtp.163.com',
-                    smtp_port: '25',
-                    smtp_user: '',
-                    smtp_password: '',
-                    email_title: '测试通知信息'
-                },
-                keyword: 'emailNotify',
-                type: 'json',
-                desc: '邮件消息通知配置',
-                pid: 0
-            },
-            phone: {
-                keyword: 'phoneNotify',
-                value: {
-                    status: '0',
-                    provider: 'aldy',
-                    access_key_id: '',
-                    secret: '',
-                    content: '测试通知信息',
-                    sing_anme: '',
-                    TemplateCode: ''
-                },
-                type: 'json',
-                desc: '手机短信通知配置',
-                pid: 0
-
-            },
-            phoneStatus: 'add',
-            emailStatus: 'add'
-        };
-    },
-    created: function created() {
-        var _this = this;
-
-        Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["b" /* config_get */])('emailNotify').then(function (response) {
-            if (response.data.status != false) {
-                _this.email.value = response.data.data;
-                _this.emailStatus = 'update';
-            } else {
-                _this.$message.info('没有配置过邮件通知信息');
-            }
-        });
-        Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["b" /* config_get */])('phoneNotify').then(function (response) {
-            if (response.data.status != false) {
-                _this.phone.value = response.data.data;
-                _this.phoneStatus = 'update';
-            } else {
-                _this.$message.info('没有配置过短信通知信息');
-            }
-        });
-    },
-
-    methods: {
-        phoneSubmit: function phoneSubmit() {
-            var _this2 = this;
-
-            if (this.phoneStatus == 'add') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["a" /* config_add */])(this.phone).then(function (response) {
-                    _this2.$message.success(response.data.message);
-                });
-            }
-            if (this.phoneStatus == 'update') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["c" /* config_update */])(1, this.phone).then(function (response) {
-                    _this2.$message.success(response.data.message);
-                });
-            }
-        },
-        emailSubmit: function emailSubmit() {
-            var _this3 = this;
-
-            if (this.emailStatus == 'add') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["a" /* config_add */])(this.email).then(function (response) {
-                    _this3.$message.success(response.data.message);
-                });
-            }
-            if (this.emailStatus == 'update') {
-                Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["c" /* config_update */])(1, this.email).then(function (response) {
-                    _this3.$message.success(response.data.message);
-                });
-            }
-        },
-        phoneTest: function phoneTest() {
-            var _this4 = this;
-
-            Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["h" /* phoneTest */])(this.phone.value).then(function (response) {
-                if (response.data.code == -1) {
-                    _this4.$message.error(response.data.msg);
-                }
-                _this4.$message.success(response.data.msg);
-            });
-        },
-        emailTest: function emailTest() {
-            var _this5 = this;
-
-            Object(__WEBPACK_IMPORTED_MODULE_0__api_system__["d" /* emailTest */])(this.email.value).then(function (response) {
-                if (response.data.code == -1) {
-                    _this5.$message.error(response.data.msg);
-                }
-                _this5.$message.success(response.data.msg);
             });
         }
-    }
+    })
 });
 
 /***/ }),
 
-/***/ 330:
+/***/ 433:
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo.png?c73551ab87d71a299f381b8a789add2c";
+
+/***/ }),
+
+/***/ 434:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(435);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(227)("003728e4", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-64ad20fd\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./login.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-64ad20fd\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./login.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 435:
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(205);
+exports = module.exports = __webpack_require__(79)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.forget-password[data-v-64ad20fd] {\n    margin-right: 45px;\n    text-decoration: none;\n    color: #666666;\n}\n.content-left[data-v-64ad20fd] {\n    float: left;\n    width: 300px;\n    margin-right: 60px;\n}\n.body[data-v-64ad20fd] {\n    padding: 40px 60px;\n    overflow: hidden;\n}\n.content-right[data-v-64ad20fd] {\n    float: left;\n    padding: 60px 0 60px 60px;\n    border-left: 1px solid #e6e6e6;\n}\n.oauth-bt[data-v-64ad20fd] {\n    width: 170px;\n}\n@font-face {\n    font-family: 'iconfont';  /* project id 1059035 */\n    src: url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.eot');\n    src: url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.eot?#iefix') format('embedded-opentype'),\n    url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.woff2') format('woff2'),\n    url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.woff') format('woff'),\n    url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.ttf') format('truetype'),\n    url('//at.alicdn.com/t/font_1059035_gbb4e5a33e.svg#iconfont') format('svg');\n}\n.iconfont[data-v-64ad20fd] {\n    font-family: \"iconfont\" !important;\n    font-size: 18px;\n    font-style: normal;\n    float: left;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n}\n.oauth[data-v-64ad20fd] {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n.oauth li[data-v-64ad20fd] {\n    line-height: 55px;\n}\n.oauth-text[data-v-64ad20fd] {\n    margin-top: 0;\n    font-size: 100%;\n    font-weight: 500;\n    line-height: 1.7;\n    margin-bottom: 27px;\n    color: #666666;\n    text-align: center;\n}\n.login[data-v-64ad20fd] {\n    width: 100%;\n    height: 100%;\n    background-color: #487779;\n}\n.loginDlog[data-v-64ad20fd] {\n    background-color: white;\n    width: 715px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n}\n.loginDlog-footer[data-v-64ad20fd] {\n    height: 70px;\n    line-height: 70px;\n    background-color: #f5f5f5;\n    padding: 0 60px;\n    color: #66b7ff;\n}\n.logo[data-v-64ad20fd] {\n    width: 240px;\n    height: 94px;\n    background: url(" + escape(__webpack_require__(433)) + ") no-repeat;\n}\n.logo a[data-v-64ad20fd] {\n    display: block;\n    width: 151px;\n    height: 94px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 436:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "email" }, [
-      _c("h2", { staticStyle: { margin: "0 0 8px 0", padding: "0" } }, [
-        _vm._v("邮件配置:")
-      ]),
-      _vm._v(" "),
-      _c("table", [
-        _c("tr", [
-          _c("td", [_vm._v("邮件发送开关:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "el-select",
-                {
-                  attrs: { placeholder: "请选择" },
-                  model: {
-                    value: _vm.email.value.status,
-                    callback: function($$v) {
-                      _vm.$set(_vm.email.value, "status", $$v)
-                    },
-                    expression: "email.value.status"
-                  }
-                },
-                _vm._l(_vm.option, function(item) {
-                  return _c("el-option", {
-                    key: item.value,
-                    attrs: { label: item.label, value: item.value }
-                  })
-                }),
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(0)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("SMTP服务器:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请输入邮箱服务器地址" },
-                model: {
-                  value: _vm.email.value.smtp_server,
-                  callback: function($$v) {
-                    _vm.$set(_vm.email.value, "smtp_server", $$v)
-                  },
-                  expression: "email.value.smtp_server"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("td", [
+  return _c("div", { staticClass: "login" }, [
+    _c("div", { staticClass: "loginDlog" }, [
+      _c("div", { staticClass: "body" }, [
+        _c(
+          "div",
+          { staticClass: "content-left" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
             _c(
-              "span",
+              "el-form",
+              {
+                ref: "form",
+                attrs: { model: _vm.form, "label-width": "80px" }
+              },
               [
-                _c("i", {
-                  staticClass: "el-icon-warning",
-                  staticStyle: { color: "red" }
-                }),
-                _vm._v("\n                        网易163邮箱："),
-                _c("el-tag", [_vm._v("smtp.163.com")]),
-                _vm._v("，qq邮箱："),
-                _c("el-tag", [_vm._v("smtp.qq.com")])
+                _c(
+                  "el-form-item",
+                  { attrs: { label: "手机号" } },
+                  [
+                    _c("el-input", {
+                      staticStyle: { width: "250px" },
+                      model: {
+                        value: _vm.form.phone,
+                        callback: function($$v) {
+                          _vm.$set(_vm.form, "phone", $$v)
+                        },
+                        expression: "form.phone "
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "el-form-item",
+                  { attrs: { label: "密  码" } },
+                  [
+                    _c("el-input", {
+                      staticStyle: { width: "250px" },
+                      attrs: { type: "password" },
+                      model: {
+                        value: _vm.form.password,
+                        callback: function($$v) {
+                          _vm.$set(_vm.form, "password", $$v)
+                        },
+                        expression: "form.password"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "el-form-item",
+                  { staticStyle: { "margin-bottom": "0!important" } },
+                  [
+                    _c(
+                      "a",
+                      { staticClass: "forget-password", attrs: { href: "" } },
+                      [_vm._v("忘记密码?")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "el-button",
+                      {
+                        staticStyle: { padding: "10px 40px" },
+                        attrs: { type: "success", size: "small" },
+                        on: { click: _vm.onSubmit }
+                      },
+                      [_vm._v("登录\n                        ")]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "content-right" }, [
+          _c("h3", { staticClass: "oauth-text" }, [_vm._v("第三方账号登录")]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "oauth" }, [
+            _c(
+              "li",
+              [
+                _c(
+                  "el-button",
+                  {
+                    staticClass: "oauth-bt",
+                    attrs: { type: "danger" },
+                    on: { click: _vm.onSubmit }
+                  },
+                  [
+                    _c("i", { staticClass: "iconfont" }, [_vm._v("")]),
+                    _vm._v(
+                      "\n                            微博登录\n                        "
+                    )
+                  ]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c(
+                  "el-button",
+                  {
+                    staticClass: "oauth-bt",
+                    attrs: { type: "primary" },
+                    on: { click: _vm.onSubmit }
+                  },
+                  [
+                    _c("i", { staticClass: "iconfont" }, [_vm._v("")]),
+                    _vm._v("\n                            QQ登录")
+                  ]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c(
+                  "el-button",
+                  {
+                    staticClass: "oauth-bt",
+                    attrs: { type: "success" },
+                    on: { click: _vm.onSubmit }
+                  },
+                  [
+                    _c("i", { staticClass: "iconfont" }, [_vm._v("")]),
+                    _vm._v("\n                            微信登录")
+                  ]
+                )
               ],
               1
             )
           ])
         ]),
         _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("SMTP服务器端口:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请输入邮箱服务器地址" },
-                model: {
-                  value: _vm.email.value.smtp_port,
-                  callback: function($$v) {
-                    _vm.$set(_vm.email.value, "smtp_port", $$v)
-                  },
-                  expression: "email.value.smtp_port"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("td", [
-            _c(
-              "span",
-              [
-                _c("i", {
-                  staticClass: "el-icon-warning",
-                  staticStyle: { color: "red" }
-                }),
-                _vm._v("\n                        网易163邮箱："),
-                _c("el-tag", [_vm._v("25")]),
-                _vm._v("，qq邮箱："),
-                _c("el-tag", [_vm._v("465")])
-              ],
-              1
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("SMTP账户:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请输入邮箱账号" },
-                model: {
-                  value: _vm.email.value.smtp_user,
-                  callback: function($$v) {
-                    _vm.$set(_vm.email.value, "smtp_user", $$v)
-                  },
-                  expression: "email.value.smtp_user"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(1)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("登录授权码:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "第三方授权密码" },
-                model: {
-                  value: _vm.email.value.smtp_password,
-                  callback: function($$v) {
-                    _vm.$set(_vm.email.value, "smtp_password", $$v)
-                  },
-                  expression: "email.value.smtp_password"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(2)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("邮件标题:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请输入邮箱服务器地址" },
-                model: {
-                  value: _vm.email.value.email_title,
-                  callback: function($$v) {
-                    _vm.$set(_vm.email.value, "email_title", $$v)
-                  },
-                  expression: "email.value.email_title"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(3)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("\n                    操作:\n                ")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "primary" }, on: { click: _vm.emailSubmit } },
-                [_vm._v("保存配置")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "success" }, on: { click: _vm.emailTest } },
-                [_vm._v("测试发送")]
-              )
-            ],
-            1
-          )
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "phone" }, [
-      _c("h2", { staticStyle: { margin: "0 0 8px 0", padding: "0" } }, [
-        _vm._v("短信配置:")
+        _c("div", { staticStyle: { clear: "both" } })
       ]),
       _vm._v(" "),
-      _c("table", [
-        _c("tr", [
-          _c("td", [_vm._v("短信发送开关:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "el-select",
-                {
-                  attrs: { placeholder: "请选择" },
-                  model: {
-                    value: _vm.phone.value.status,
-                    callback: function($$v) {
-                      _vm.$set(_vm.phone.value, "status", $$v)
-                    },
-                    expression: "phone.value.status"
-                  }
-                },
-                _vm._l(_vm.option, function(item) {
-                  return _c("el-option", {
-                    key: item.value,
-                    attrs: { label: item.label, value: item.value }
-                  })
-                }),
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(4)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("选择服务商:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "el-select",
-                {
-                  attrs: { placeholder: "请选择" },
-                  model: {
-                    value: _vm.phone.value.provider,
-                    callback: function($$v) {
-                      _vm.$set(_vm.phone.value, "provider", $$v)
-                    },
-                    expression: "phone.value.provider"
-                  }
-                },
-                _vm._l(_vm.provider, function(item) {
-                  return _c("el-option", {
-                    key: item.value,
-                    attrs: { label: item.label, value: item.value }
-                  })
-                }),
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(5)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("accessKeyId:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请输入授权Id" },
-                model: {
-                  value: _vm.phone.value.access_key_id,
-                  callback: function($$v) {
-                    _vm.$set(_vm.phone.value, "access_key_id", $$v)
-                  },
-                  expression: "phone.value.access_key_id"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(6)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("Secret密匙:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "填写授权密匙" },
-                model: {
-                  value: _vm.phone.value.secret,
-                  callback: function($$v) {
-                    _vm.$set(_vm.phone.value, "secret", $$v)
-                  },
-                  expression: "phone.value.secret"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(7)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("短信签名:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请输入短信的签名" },
-                model: {
-                  value: _vm.phone.value.sing_anme,
-                  callback: function($$v) {
-                    _vm.$set(_vm.phone.value, "sing_anme", $$v)
-                  },
-                  expression: "phone.value.sing_anme"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(8)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("模板代码:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请输入模板代码" },
-                model: {
-                  value: _vm.phone.value.TemplateCode,
-                  callback: function($$v) {
-                    _vm.$set(_vm.phone.value, "TemplateCode", $$v)
-                  },
-                  expression: "phone.value.TemplateCode"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(9)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("短信内容:")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c("el-input", {
-                staticClass: "longInput",
-                attrs: { placeholder: "请填写短信通知内容" },
-                model: {
-                  value: _vm.phone.value.content,
-                  callback: function($$v) {
-                    _vm.$set(_vm.phone.value, "content", $$v)
-                  },
-                  expression: "phone.value.content"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(10)
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("\n                    操作:\n                ")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "primary" }, on: { click: _vm.phoneSubmit } },
-                [_vm._v("保存配置")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "success" }, on: { click: _vm.phoneTest } },
-                [_vm._v("测试发送")]
-              )
-            ],
-            1
-          )
-        ])
+      _c("div", { staticClass: "loginDlog-footer" }, [
+        _vm._v("\n            驱动IT管理系统\n        ")
       ])
     ])
   ])
@@ -1965,163 +733,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v(
-          "\n                        默认关闭状态,如需开启请选择开启并设置好通知参数并保存\n                    "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v(
-          "\n                        输入邮箱的登录账户\n                    "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v(
-          "\n                        填写邮箱的客户端授权密码\n                    "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v("\n                        通知信息的标题\n                    ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v(
-          "\n                        默认关闭状态,如需开启请选择开启并设置好通知参数并保存\n                    "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v("\n                        选择服务商类型\n                    ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v("\n                        填写授权Id\n                    ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v("\n                        填写授权密匙\n                    ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v("\n                        填写短信签名\n                    ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v("\n                        模板代码\n                    ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", [
-        _c("i", {
-          staticClass: "el-icon-warning",
-          staticStyle: { color: "red" }
-        }),
-        _vm._v("\n                        短信的通知内容\n                    ")
-      ])
-    ])
+    return _c("h1", { staticClass: "logo" }, [_c("a")])
   }
 ]
 render._withStripped = true
@@ -2129,62 +741,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f368991c", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 331:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "el-tabs",
-    {
-      model: {
-        value: _vm.activeName,
-        callback: function($$v) {
-          _vm.activeName = $$v
-        },
-        expression: "activeName"
-      }
-    },
-    [
-      _c(
-        "el-tab-pane",
-        { attrs: { lazy: true, label: "微信配置", name: "first" } },
-        [_c("wx")],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "el-tab-pane",
-        { attrs: { lazy: true, label: "防刷配置", name: "second" } },
-        [_c("batchOrder")],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "el-tab-pane",
-        { attrs: { lazy: true, label: "通知配置", name: "third" } },
-        [_c("notify")],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7ef86a87", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-64ad20fd", module.exports)
   }
 }
 
