@@ -461,7 +461,7 @@ exports = module.exports = __webpack_require__(79)(false);
 
 
 // module
-exports.push([module.i, "\n.forget-password[data-v-64ad20fd] {\n    margin-right: 45px;\n    text-decoration: none;\n    color: #666666;\n}\n.content-left[data-v-64ad20fd] {\n    float: left;\n    width: 300px;\n    margin-right: 60px;\n}\n.body[data-v-64ad20fd] {\n    padding: 40px 60px;\n    overflow: hidden;\n}\n.content-right[data-v-64ad20fd] {\n    float: left;\n    padding: 60px 0 60px 60px;\n    border-left: 1px solid #e6e6e6;\n}\n.oauth-bt[data-v-64ad20fd] {\n    width: 170px;\n}\n@font-face {\n    font-family: 'iconfont';  /* project id 1059035 */\n    src: url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.eot');\n    src: url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.eot?#iefix') format('embedded-opentype'),\n    url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.woff2') format('woff2'),\n    url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.woff') format('woff'),\n    url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.ttf') format('truetype'),\n    url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.svg#iconfont') format('svg');\n}\n.iconfont[data-v-64ad20fd] {\n    font-family: \"iconfont\" !important;\n    font-size: 18px;\n    font-style: normal;\n    float: left;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n}\n.oauth[data-v-64ad20fd] {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n.oauth li[data-v-64ad20fd] {\n    line-height: 55px;\n}\n.oauth-text[data-v-64ad20fd] {\n    margin-top: 0;\n    font-size: 100%;\n    font-weight: 500;\n    line-height: 1.7;\n    margin-bottom: 27px;\n    color: #666666;\n    text-align: center;\n}\n.login[data-v-64ad20fd] {\n    width: 100%;\n    height: 100%;\n    background-color: #487779;\n}\n.loginDlog[data-v-64ad20fd] {\n    background-color: white;\n    width: 715px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n}\n.loginDlog-footer[data-v-64ad20fd] {\n    height: 70px;\n    line-height: 70px;\n    background-color: #f5f5f5;\n    padding: 0 60px;\n    color: #66b7ff;\n}\n.logo[data-v-64ad20fd] {\n    width: 240px;\n    height: 94px;\n    background: url(" + escape(__webpack_require__(424)) + ") no-repeat;\n}\n.logo a[data-v-64ad20fd] {\n    display: block;\n    width: 151px;\n    height: 94px;\n}\n", ""]);
+exports.push([module.i, "\n.loginDlog-footer-text[data-v-64ad20fd]{\n    float: right;\n    width: 55%;\n}\n.loginDlog-footer-text p[data-v-64ad20fd] {\n    line-height: 30px;\n}\n.forget-password[data-v-64ad20fd] {\n    margin-right: 45px;\n    text-decoration: none;\n    color: #666666;\n}\n.content-left[data-v-64ad20fd] {\n    float: left;\n    width: 300px;\n    margin-right: 60px;\n}\n.body[data-v-64ad20fd] {\n    padding: 40px 60px;\n    overflow: hidden;\n}\n.content-right[data-v-64ad20fd] {\n    float: left;\n    padding: 60px 0 60px 60px;\n    border-left: 1px solid #e6e6e6;\n}\n.oauth-bt[data-v-64ad20fd] {\n    width: 170px;\n}\n.oauth[data-v-64ad20fd] {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n.oauth li[data-v-64ad20fd] {\n    line-height: 55px;\n}\n.oauth-text[data-v-64ad20fd] {\n    margin-top: 0;\n    font-size: 100%;\n    font-weight: 500;\n    line-height: 1.7;\n    margin-bottom: 27px;\n    color: #666666;\n    text-align: center;\n}\n.login[data-v-64ad20fd] {\n    width: 100%;\n    height: 100%;\n    background-color: #487779;\n}\n.loginDlog[data-v-64ad20fd] {\n    background-color: white;\n    width: 715px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n}\n.loginDlog-footer[data-v-64ad20fd] {\n    height: 70px;\n    background-color: #f5f5f5;\n    padding: 0 60px;\n    color: #66b7ff;\n}\n.logo[data-v-64ad20fd] {\n    width: 240px;\n    height: 94px;\n    background: url(" + escape(__webpack_require__(424)) + ") no-repeat;\n}\n.logo a[data-v-64ad20fd] {\n    display: block;\n    width: 151px;\n    height: 94px;\n}\n", ""]);
 
 // exports
 
@@ -536,6 +536,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -556,7 +562,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.handleLogin(this.form).then(function (res) {
                 if (res.code == 0) {
                     _this.$message.success('登陆成功');
-                    _this.$router.push('/');
+                    _this.$router.push('/auth');
                 } else {
                     _this.$message.error('登陆失败');
                 }
@@ -648,12 +654,8 @@ var render = function() {
                         _c(
                           "i",
                           {
-                            staticClass: "iconfont",
-                            staticStyle: {
-                              top: "-3px",
-                              right: "10px",
-                              position: "relative"
-                            }
+                            staticClass: "al-font",
+                            staticStyle: { top: "1px", position: "relative" }
                           },
                           [_vm._v("")]
                         ),
@@ -687,7 +689,7 @@ var render = function() {
                     on: { click: _vm.onSubmit }
                   },
                   [
-                    _c("i", { staticClass: "iconfont" }, [_vm._v("")]),
+                    _c("i", { staticClass: "al-font" }, [_vm._v("")]),
                     _vm._v(
                       "\n                            微博登录\n                        "
                     )
@@ -708,7 +710,7 @@ var render = function() {
                     on: { click: _vm.onSubmit }
                   },
                   [
-                    _c("i", { staticClass: "iconfont" }, [_vm._v("")]),
+                    _c("i", { staticClass: "al-font" }, [_vm._v("")]),
                     _vm._v("\n                            QQ登录")
                   ]
                 )
@@ -727,7 +729,7 @@ var render = function() {
                     on: { click: _vm.onSubmit }
                   },
                   [
-                    _c("i", { staticClass: "iconfont" }, [_vm._v("")]),
+                    _c("i", { staticClass: "al-font" }, [_vm._v("")]),
                     _vm._v("\n                            微信登录")
                   ]
                 )
@@ -740,9 +742,7 @@ var render = function() {
         _c("div", { staticStyle: { clear: "both" } })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "loginDlog-footer" }, [
-        _vm._v("\n            驱动IT管理系统\n        ")
-      ])
+      _vm._m(1)
     ])
   ])
 }
@@ -752,6 +752,24 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", { staticClass: "logo" }, [_c("a")])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "loginDlog-footer" }, [
+      _c("div", { staticStyle: { float: "left" } }, [
+        _c("img", {
+          attrs: { src: __webpack_require__(434), alt: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "loginDlog-footer-text" }, [
+        _c("p", [_vm._v(" 当前版本:V 1.0.0")]),
+        _vm._v(" "),
+        _c("p", [_vm._v(" 欢迎回来!辛勤工作的一天,由登录系统开始")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -762,6 +780,13 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-64ad20fd", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 434:
+/***/ (function(module, exports) {
+
+module.exports = "/images/company_logo.png?c5af61bd0280afb265b952f0e9c731b2";
 
 /***/ })
 

@@ -23,17 +23,6 @@ class NormalLogin extends AbstractLogin
     public function handleLogin()
     {
         $phone = request()->get('phone');
-        $code = request()->get('code');
-        //判断输入的验证码是否一致
-        $isAdopt = SmsService::check($phone, $code);
-        if ($code != '123456') {  //临时验证码,方便测试
-            if ($isAdopt !== true) {
-                return response()->json([
-                    'code' => -2,
-                    'msg' => '验证码不正确',
-                ]);
-            }
-        }
         $user = $this->userModel::query()
             ->where('phone', $phone)
             ->first();

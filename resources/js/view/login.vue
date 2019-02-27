@@ -16,7 +16,7 @@
                         <el-form-item style="margin-bottom:0!important;">
                             <a href="" class="forget-password">忘记密码?</a>
                             <el-button style="padding: 10px 30px;" type="success" size="small" @click="onSubmit">
-                                <i class="iconfont" style="top: -3px;right: 10px;position: relative;">&#xe6f0;</i>
+                                <i class="al-font" style="top: 1px;position: relative;">&#xe6f0;</i>
                                 登录
                             </el-button>
                         </el-form-item>
@@ -27,18 +27,18 @@
                     <ul class="oauth">
                         <li>
                             <el-button class="oauth-bt" type="danger" @click="onSubmit">
-                                <i class="iconfont">&#xe61d;</i>
+                                <i class="al-font">&#xe61d;</i>
                                 微博登录
                             </el-button>
                         </li>
                         <li>
                             <el-button class="oauth-bt" type="primary" @click="onSubmit">
-                                <i class="iconfont">&#xe637;</i>
+                                <i class="al-font">&#xe637;</i>
                                 QQ登录</el-button>
                         </li>
                         <li>
                             <el-button class="oauth-bt" type="success" @click="onSubmit">
-                                <i class="iconfont">&#xe61e;</i>
+                                <i class="al-font">&#xe61e;</i>
                                 微信登录</el-button>
                         </li>
                     </ul>
@@ -46,7 +46,13 @@
                 <div style="clear: both"></div>
             </div>
             <div class="loginDlog-footer">
-                驱动IT管理系统
+                <div style="float: left">
+                    <img src="../src/img/company_logo.png" alt="">
+                </div>
+                <div class="loginDlog-footer-text">
+                    <p> 当前版本:V 1.0.0</p>
+                    <p> 欢迎回来!辛勤工作的一天,由登录系统开始</p>
+                </div>
             </div>
         </div>
     </div>
@@ -71,7 +77,7 @@
                 this.handleLogin(this.form).then(res => {
                     if (res.code == 0) {
                         this.$message.success('登陆成功');
-                        this.$router.push('/')
+                        this.$router.push('/auth')
                     } else {
                         this.$message.error('登陆失败');
                     }
@@ -82,6 +88,13 @@
 </script>
 
 <style scoped>
+    .loginDlog-footer-text{
+        float: right;
+        width: 55%;
+    }
+    .loginDlog-footer-text p {
+        line-height: 30px;
+    }
     .forget-password {
         margin-right: 45px;
         text-decoration: none;
@@ -103,23 +116,6 @@
     }
     .oauth-bt {
         width: 170px;
-    }
-    @font-face {
-        font-family: 'iconfont';  /* project id 1059035 */
-        src: url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.eot');
-        src: url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.woff2') format('woff2'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.woff') format('woff'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.svg#iconfont') format('svg');
-    }
-    .iconfont {
-        font-family: "iconfont" !important;
-        font-size: 18px;
-        font-style: normal;
-        float: left;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
     }
     .oauth {
         list-style: none;
@@ -153,7 +149,6 @@
     }
     .loginDlog-footer {
         height: 70px;
-        line-height: 70px;
         background-color: #f5f5f5;
         padding: 0 60px;
         color: #66b7ff;

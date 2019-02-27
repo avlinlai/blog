@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="/css/base.css">
     <title>驱动IT系统管理</title>
     <style>
         body{
