@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6eeea94a-0240-491e-8453-1cc93889bd33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/src/img/50807 驱动IT  1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/src/img/company_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/src/img/company_logo_lucency.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/Login/Drive/NormalLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/Login/Drive/NormalLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk0.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk10.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk11.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk12.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk12.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk13.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk13.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk14.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk14.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk15.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk15.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk16.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk16.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk6.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk7.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk8.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunk/chunk9.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunk/chunk9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/view/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/view/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="6eeea94a-0240-491e-8453-1cc93889bd33" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +331,7 @@
       <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -457,7 +427,7 @@
       <workItem from="1551055485751" duration="70000" />
       <workItem from="1551060330942" duration="21298000" />
       <workItem from="1551090914479" duration="1291000" />
-      <workItem from="1551272007432" duration="3094000" />
+      <workItem from="1551272007432" duration="3398000" />
     </task>
     <task id="LOCAL-00001" summary="日常提交">
       <created>1550827716788</created>
@@ -477,11 +447,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39425000" />
+    <option name="totallyTimeSpent" value="39729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26172465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -498,7 +467,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.26350245" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26350245" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
