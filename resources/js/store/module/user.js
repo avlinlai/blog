@@ -37,8 +37,8 @@ export default {
                 login(from).then(res => {
                     const data = res.data;
                     if (data.code == 0){
-                        commit('setToken', data.token);
-                        setToken(data.token);
+                        commit('setToken', data.Authorization);
+                        setToken(data.Authorization);
                         resolve(data)
                     }else{
                         reject('code is not 0')

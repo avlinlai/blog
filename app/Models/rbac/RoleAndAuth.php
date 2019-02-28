@@ -18,6 +18,6 @@ class RoleAndAuth extends Model
 
 
     public function Auth(){
-        return $this->hasMany('App\Models\Auth','id','auth_id');
+        return $this->hasMany(Auth::class,'id','auth_id');
     }
 }

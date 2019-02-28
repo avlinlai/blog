@@ -548,7 +548,7 @@ exports = module.exports = __webpack_require__(79)(false);
 
 
 // module
-exports.push([module.i, "\n.el-header[data-v-1c77360a] {\n    background-color: #515a6e;\n    color: #fff;\n    line-height: 60px;\n}\n.logo[data-v-1c77360a]{\n    width: 180px;\n    float: left;\n    color: #fff;\n    font-size: 20px;\n}\n.logo span[data-v-1c77360a]{\n    font-size: 24px;\n    color: #fff;\n}\n.logo font[data-v-1c77360a]{\n    font-size: 16px;\n}\n.el-aside[data-v-1c77360a] {\n    background-color: #fff;\n    color: #333;\n}\n.el-menu[data-v-1c77360a]{\n    border: none;\n}\n.el-submenu[data-v-1c77360a]{\n    width: 200px;\n}\n.el-main[data-v-1c77360a] {\n    background-color: #E9EEF3;\n    color: #333;\n}\n", ""]);
+exports.push([module.i, "\n.el-header[data-v-1c77360a] {\n    background-color: #515a6e;\n    color: #fff;\n    line-height: 60px;\n}\n.logo[data-v-1c77360a] {\n    width: 180px;\n    float: left;\n    color: #fff;\n    font-size: 20px;\n}\n.logo span[data-v-1c77360a] {\n    font-size: 24px;\n    color: #fff;\n}\n.logo font[data-v-1c77360a] {\n    font-size: 16px;\n}\n.el-aside[data-v-1c77360a] {\n    background-color: #fff;\n    color: #333;\n}\n.el-menu[data-v-1c77360a] {\n    border: none;\n}\n.el-submenu[data-v-1c77360a] {\n    width: 200px;\n}\n.el-main[data-v-1c77360a] {\n    background-color: #E9EEF3;\n    color: #333;\n}\n", ""]);
 
 // exports
 
@@ -624,6 +624,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -771,7 +779,7 @@ var render = function() {
           _c("div", { staticClass: "logo" }, [
             _vm._v("驱动IT系统管理 "),
             _c("span", { staticStyle: { "font-size": "12px" } }, [
-              _vm._v("V1.0")
+              _vm._v("V1.0.0")
             ])
           ]),
           _vm._v(" "),
@@ -899,9 +907,11 @@ var render = function() {
                                                       },
                                                       [
                                                         _vm._v(
-                                                          _vm._s(
-                                                            sub_sub_menu.name
-                                                          )
+                                                          "\n                                            " +
+                                                            _vm._s(
+                                                              sub_sub_menu.name
+                                                            ) +
+                                                            "\n                                        "
                                                         )
                                                       ]
                                                     )
@@ -944,7 +954,7 @@ var render = function() {
                         { attrs: { to: { path: "/" } } },
                         [
                           _c("i", { staticClass: "el-icon-location-outline" }),
-                          _vm._v(" 首页")
+                          _vm._v(" 首页\n                    ")
                         ]
                       ),
                       _vm._v(" "),

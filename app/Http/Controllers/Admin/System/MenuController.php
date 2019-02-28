@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin\System;
 
-use App\Models\rbac\Role;
 use App\Models\rbac\RoleAndAuth;
 use App\Models\user\User;
 use Illuminate\Http\Request;

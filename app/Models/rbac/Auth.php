@@ -2,6 +2,7 @@
 
 namespace App\Models\rbac;
 
+use App\Models\system\Menu;
 use Illuminate\Database\Eloquent\Model;
 
 class Auth extends Model

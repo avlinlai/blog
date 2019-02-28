@@ -74521,8 +74521,8 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                 Object(__WEBPACK_IMPORTED_MODULE_0__api_user__["r" /* login */])(from).then(function (res) {
                     var data = res.data;
                     if (data.code == 0) {
-                        commit('setToken', data.token);
-                        Object(__WEBPACK_IMPORTED_MODULE_1__libs_util__["b" /* setToken */])(data.token);
+                        commit('setToken', data.Authorization);
+                        Object(__WEBPACK_IMPORTED_MODULE_1__libs_util__["b" /* setToken */])(data.Authorization);
                         resolve(data);
                     } else {
                         reject('code is not 0');

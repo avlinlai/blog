@@ -562,7 +562,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.handleLogin(this.form).then(function (res) {
                 if (res.code == 0) {
                     _this.$message.success('登陆成功');
-                    _this.$router.push('/auth');
+                    _this.$router.push('/');
                 } else {
                     _this.$message.error('登陆失败');
                 }

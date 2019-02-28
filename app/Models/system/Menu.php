@@ -2,6 +2,7 @@
 
 namespace App\Models\system;
 
+use App\Models\rbac\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -13,18 +14,18 @@ class Menu extends Model
     // 子菜单
     public function SubMenu()
     {
-        return $this->hasMany('App\Models\Menu','pid');
+        return $this->hasMany(Menu::class,'pid');
     }
 
     // 父级菜单
     public function Parent()
     {
-        return $this->belongsTo('App\Models\Menu','pid');
+        return $this->belongsTo(Menu::class,'pid');
     }
 
     // 拥有的权限
     public function HasAuth(){
-        return $this->hasMany('App\Models\Auth','menu_id');
+        return $this->hasMany(Auth::class,'menu_id');
     }
 
     protected static function boot()

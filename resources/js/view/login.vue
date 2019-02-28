@@ -77,7 +77,7 @@
                 this.handleLogin(this.form).then(res => {
                     if (res.code == 0) {
                         this.$message.success('登陆成功');
-                        this.$router.push('/auth')
+                        this.$router.push('/');
                     } else {
                         this.$message.error('登陆失败');
                     }

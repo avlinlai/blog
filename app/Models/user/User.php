@@ -2,6 +2,9 @@
 
 namespace App\Models\user;
 
+use App\Models\rbac\Role;
+use App\Models\rbac\RoleAndAuth;
+use App\Models\rbac\UserAndRole;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;

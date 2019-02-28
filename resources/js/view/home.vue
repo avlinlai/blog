@@ -1,7 +1,7 @@
 <template>
     <el-container style="height: 100%;">
         <el-header>
-            <div class="logo">驱动IT系统管理&nbsp;<span style="font-size: 12px">V1.0</span></div>
+            <div class="logo">驱动IT系统管理&nbsp;<span style="font-size: 12px">V1.0.0</span></div>
             <!--<el-switch v-model="isCollapse"></el-switch>-->
             <el-dropdown trigger="hover" style="float: right;color: #fff;" @command="handleCommand">
                 <span class="el-dropdown-link">
@@ -13,7 +13,8 @@
                 </el-dropdown-menu>
             </el-dropdown>
             <div class="avator" style="display: inline-block;float: right;">
-                <img style="padding: 10px;display: block; width: 40px;height: 40px;border-radius: 30px;" :src="this.$store.state.user.avatar" alt="">
+                <img style="padding: 10px;display: block; width: 40px;height: 40px;border-radius: 30px;"
+                     :src="this.$store.state.user.avatar" alt="">
             </div>
         </el-header>
         <el-container>
@@ -22,16 +23,21 @@
                 <el-menu :collapse="isCollapse" :router="true">
                     <template v-for="menu in menus">
                         <template v-if="menu.sub_menu.length>0">
-                            <component :index="menu.id+''" :route="menu.url" v-bind:is="menu.sub_menu.length>0 ? 'el-submenu':'el-menu-item'">
+                            <component :index="menu.id+''" :route="menu.url"
+                                       v-bind:is="menu.sub_menu.length>0 ? 'el-submenu':'el-menu-item'">
                                 <template slot="title">
                                     <i :class="menu.icon"></i>
                                     <span slot="title">{{menu.name}}</span>
                                 </template>
                                 <template v-if="menu.sub_menu.length>0" v-for="sub_menu in menu.sub_menu">
-                                    <component :index="sub_menu.id+''" :route="sub_menu.url" v-bind:is="sub_menu.sub_menu.length>0 ? 'el-submenu':'el-menu-item'">
+                                    <component :index="sub_menu.id+''" :route="sub_menu.url"
+                                               v-bind:is="sub_menu.sub_menu.length>0 ? 'el-submenu':'el-menu-item'">
                                         <template slot="title">{{sub_menu.name}}</template>
-                                        <template v-if="sub_menu.sub_menu.length>0" v-for="sub_sub_menu in sub_menu.sub_menu">
-                                            <el-menu-item :index="sub_sub_menu.id+''" :route="sub_sub_menu.url">{{sub_sub_menu.name}}</el-menu-item>
+                                        <template v-if="sub_menu.sub_menu.length>0"
+                                                  v-for="sub_sub_menu in sub_menu.sub_menu">
+                                            <el-menu-item :index="sub_sub_menu.id+''" :route="sub_sub_menu.url">
+                                                {{sub_sub_menu.name}}
+                                            </el-menu-item>
                                         </template>
                                     </component>
                                 </template>
@@ -45,7 +51,8 @@
                 <div :style="{height:'30px'}">
 
                     <el-breadcrumb separator="/">
-                        <el-breadcrumb-item :to="{ path: '/' }"><i class="el-icon-location-outline"></i> 首页</el-breadcrumb-item>
+                        <el-breadcrumb-item :to="{ path: '/' }"><i class="el-icon-location-outline"></i> 首页
+                        </el-breadcrumb-item>
                         <template v-for="item in reversedBreadcrumb">
                             <el-breadcrumb-item>{{item}}</el-breadcrumb-item>
                         </template>
@@ -58,9 +65,10 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex'
-    import {clean,sitemap} from "@/api/article"
+    import {mapActions} from 'vuex'
+    import {clean, sitemap} from "@/api/article"
     import loading from '@/mixins/loading'
+
     export default {
         name: "home",
         mixins: [loading],
@@ -71,22 +79,22 @@
                 asideWidth: "200px",
             }
         },
-        created:function(){
-            if (this.$store.state.app.menu == null){
+        created: function () {
+            if (this.$store.state.app.menu == null) {
                 this.openFullScreenLoading();
-                this.handleGetMenu().then((data)=>{
+                this.handleGetMenu().then((data) => {
                     this.closeFullScreenLoading();
                     this.menus = data;
-                }).catch((err)=>{
+                }).catch((err) => {
                     this.closeFullScreenLoading();
                     console.log(err);
                 })
-            } else{
+            } else {
                 this.menus = this.$store.state.app.menu;
             }
         },
-        watch:{
-            isCollapse:function (val) {
+        watch: {
+            isCollapse: function (val) {
                 this.asideWidth = val ? "65px" : "200px";
             },
         },
@@ -95,13 +103,13 @@
             reversedBreadcrumb: function () {
                 let menu = this.menus;
                 let route_name = this.$route.path;
-                for (let x in menu){
+                for (let x in menu) {
                     let name = [];
                     name[0] = menu[x].name;
-                    if (menu[x].url === route_name){
+                    if (menu[x].url === route_name) {
                         return name;
                     }
-                    if (menu[x].sub_menu.length>0){
+                    if (menu[x].sub_menu.length > 0) {
                         for (let y in menu[x].sub_menu) {
                             let _menu = menu[x].sub_menu[y];
                             name[1] = _menu.name;
@@ -123,20 +131,20 @@
                 return [];
             }
         },
-        methods:{
+        methods: {
             ...mapActions([
                 'handleLogOut',
                 'handleGetMenu',
                 'GetBaseDataByKey',
                 'GetBaseDataById',
             ]),
-            handleCommand(command){
+            handleCommand(command) {
                 // 退出登录
-                if(command == 'logout') {
+                if (command == 'logout') {
                     this.handleLogOut();
                     this.$router.push('login')
-                } else if(command == 'clear') {
-                    clean().then(response=>{
+                } else if (command == 'clear') {
+                    clean().then(response => {
                         this.$message.success(response.data.msg);
                     })
                 }
@@ -151,17 +159,20 @@
         color: #fff;
         line-height: 60px;
     }
-    .logo{
+
+    .logo {
         width: 180px;
         float: left;
         color: #fff;
         font-size: 20px;
     }
-    .logo span{
+
+    .logo span {
         font-size: 24px;
         color: #fff;
     }
-    .logo font{
+
+    .logo font {
         font-size: 16px;
     }
 
@@ -169,12 +180,15 @@
         background-color: #fff;
         color: #333;
     }
-    .el-menu{
+
+    .el-menu {
         border: none;
     }
-    .el-submenu{
+
+    .el-submenu {
         width: 200px;
     }
+
     .el-main {
         background-color: #E9EEF3;
         color: #333;

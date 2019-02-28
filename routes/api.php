@@ -11,7 +11,7 @@ Route::namespace('Admin\User')->group(function () {
 });
 
 
-Route::group(['middleware' => ['auth:api', 'auth.check']], function () {
+Route::group(['middleware' => ['auth:api'],'namespace'=>'Admin'], function () {
     // 用户管理
     require_once base_path('routes/api/user.php');
     //系统管理
