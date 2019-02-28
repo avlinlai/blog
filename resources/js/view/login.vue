@@ -71,7 +71,7 @@
                 this.handleLogin(this.form).then(res => {
                     if (res.code == 0) {
                         this.$message.success('登陆成功');
-                        this.$router.push('/')
+                        this.$router.push('/');
                     } else {
                         this.$message.error('登陆失败');
                     }
@@ -103,23 +103,6 @@
     }
     .oauth-bt {
         width: 170px;
-    }
-    @font-face {
-        font-family: 'iconfont';  /* project id 1059035 */
-        src: url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.eot');
-        src: url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.woff2') format('woff2'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.woff') format('woff'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_1059035_fdgh4j7248c.svg#iconfont') format('svg');
-    }
-    .iconfont {
-        font-family: "iconfont" !important;
-        font-size: 18px;
-        font-style: normal;
-        float: left;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
     }
     .oauth {
         list-style: none;
